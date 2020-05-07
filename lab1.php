@@ -10,10 +10,6 @@ if(isset($_POST['save_btn'])){
     $user_city = $_POST['user_city'];
 
 //Creating a user object
-    //var_dump($_POST);
-    //die();
-    //echo "Me".$first_name.$last_name.$user_city;
-        //die();
     $user = new User($first_name,$last_name,$user_city);
     /*if(!$user->validateForm()){
           $user->createFormErrorSessions();
@@ -36,10 +32,11 @@ if(isset($_POST['save_btn'])){
 
 <head>
     <title>Form Page</title>
+    <script type = "text/javascript" src = "validate.js"></script>
   </head>
 
 <body>
-    <form method = "post">
+    <form method = "post" name = "user_details" id = "user_details" onsubmit="return validateForm()" action = "<?=$_SERVER['PHP_SELF']?>">
        <table align = "center"> 
           <tr>
               <td><input type = "text" name = "first_name" placeholder = "First Name" required /></td>
@@ -53,6 +50,9 @@ if(isset($_POST['save_btn'])){
           <tr>
               <td><button type = "submit" name = "save_btn"><strong>SAVE</strong></button></td>
           </tr>
+          <tr>
+          <td><a href = "readAll.php"><input type = "button" value = "VIEW TABLE"> </a></td>
+        </tr>
        </table> 
     </form>
     

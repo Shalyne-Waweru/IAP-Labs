@@ -60,8 +60,10 @@
     	$res = mysqli_query($con->conn, "INSERT INTO user(first_name,last_name,user_city) VALUES('$fn','$ln','$city')")or die("Error:" .mysqli_error($con->conn));
     	return $res;
     }
-    public function readAll(){
-    	return null;
+    public function readAll($dbcon){
+        $query = "SELECT * FROM user";
+        $result = mysqli_query($dbcon->conn, $query) or die("Error:" .mysqli_error($dbcon->conn));
+        return $result;  
     }
     public function readUnique(){
     	return null;

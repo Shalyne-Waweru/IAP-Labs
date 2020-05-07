@@ -2,7 +2,7 @@
     interface Crud{
     	//methods
     	public function save($con);
-    	public function readAll();
+    	public function readAll($dbcon);
     	public function readUnique();
     	public function search();
     	public function removeOne();
