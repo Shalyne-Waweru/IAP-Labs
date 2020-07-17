@@ -1,34 +1,3 @@
 #form-errors{
 	color:red;
 }
-****<form method = "post" name = "user_details" id = "user_details" onsubmit="return validateForm()" action = "<?=$_SERVER['PHP_SELF']?>">
-	 *****************<script type = "text/javascript" src = "validate.js"></script>
-    <link rel = "stylesheet" type = "text/css" href = "validate.css">*******
-    ****<tr>
-              <td>
-                <div id = "form-errors">
-                  <?php
-                      session_start();
-                      if(!empty($_SESSION['form-errors'])){
-                        echo " " . $_SESSION['form-errors'];
-                        unset($_SESSION['form-errors']);
-                      }
-                  ?>
-                </div>
-              </td>
-          ****</tr>
-
-          //var_dump($_POST);
-    //die();
-    //echo "Me".$first_name.$last_name.$user_city;
-        //die();
-
-        
-
-          function construct($first_name,$last_name,$user_city,$username,$password){
-    	$this->first_name = $first_name;
-    	$this->last_name = $last_name;
-    	$this->user_city = $user_city;
-        //$this->username = $username;
-        //$this->password = $password;
-    }

@@ -1,9 +1,10 @@
 <?php
     interface Authenticator{
-    	//methods
+    	//lab 2 methods
+    	//7.
     	public function hashPassword();
-    	public function isPasswordCorrect();
-    	public function login();
+    	public function isPasswordCorrect($con);
+    	public function login($con);
     	public function logout();
         public function createFormErrorSessions();
     }

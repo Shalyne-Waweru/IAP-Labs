@@ -2,16 +2,18 @@
 
 include_once 'DBConnector.php';
 include_once 'user.php';
-$dbcon = new DBConnector;
+$con = new DBConnector;
 
 
 $first_name = "";
 $last_name = "";
 $user_city = "";
+$username = "";
+$password = "";
 
 //Creating another user object
-    $view = new User($first_name,$last_name,$user_city);
-    $result = $view->readAll($dbcon);
+    $view = new User($first_name,$last_name,$user_city,$username,$password);
+    $result = $view->readAll($con);
 
     if($result){
         echo "Successful retrieval";
@@ -33,6 +35,8 @@ $user_city = "";
           <th> first_name </th>
           <th> last_name </th>
           <th> user_city </th>
+          <th> username </th>
+          <th> password </th>
         </tr>
       </thead>
       
@@ -46,6 +50,8 @@ $user_city = "";
           <td> <?php echo $row ->first_name?> </td>
           <td> <?php echo $row ->last_name?> </td>
           <td> <?php echo $row ->user_city?> </td>
+          <td> <?php echo $row ->username?> </td>
+          <td> <?php echo $row ->password?> </td>
         </tr>
       </tbody>
       <?php
